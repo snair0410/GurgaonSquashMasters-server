@@ -62,7 +62,6 @@ export const addMatch = async (req, res, next) => {
     tournamentName === 'GSM Edition 3' || tournamentName === 'GSM Edition 4' ||
      tournamentName === 'GSM Edition 5' || tournamentName === 'Challenge Match'){
     if(wPlayer.totalmatchesplayed >=3 && lPlayer.totalmatchesplayed >=3){
-        console.log("FOR THE FIRST TIME")
         if(wPlayer.rank === lPlayer.rank){
             differenceInRanking = 0
         }
@@ -300,7 +299,6 @@ export const updateRanking = async (req, res, next) => {
 
 export const getRanks = async (req, res, next) => {
 
-    console.log("inside the get")
     let rankingData = []
     try{
         rankingData = await Ranking.find({playerbanned: { $eq: null}}).sort({"rank": 1}).exec()
