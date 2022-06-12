@@ -13,6 +13,10 @@ app.use(cors())
 
 app.use('/admin', adminRoutes)
 
+app.get('/', (req, res) => {
+    res.send("App is running")
+})
+
 const CONNECTION_URL = "mongodb+srv://gurgaonsquashmasters:Unni0410@cluster0.takwphc.mongodb.net/?retryWrites=true&w=majority"
 const PORT = process.env.PORT || 5000
 
